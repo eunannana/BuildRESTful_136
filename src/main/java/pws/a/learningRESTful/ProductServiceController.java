@@ -42,7 +42,9 @@ public class ProductServiceController {
         // set discount data 1
         honey.setDisc(0.1);
         // set total data 1
-        honey.setTotal();
+        Double TotalPrice1 = honey.getPrice() - (honey.getPrice() * honey.getDisc());
+        honey.setTotal(TotalPrice1);
+      
         // declare data value
         productRepo.put(honey.getId(), honey);
 
@@ -57,11 +59,11 @@ public class ProductServiceController {
         // set discount data 2
         almond.setDisc(0.3);
         // set total data 2
-        almond.setTotal();
+         Double TotalPrice2 = almond.getPrice() - (almond.getPrice() * almond.getDisc());
+        almond.setTotal(TotalPrice2);
         // declare data value 
         productRepo.put(almond.getId(), almond);
-        
-        
+       
     }
 
     // declare RequestMapping for URL
@@ -82,7 +84,8 @@ public class ProductServiceController {
             return new ResponseEntity<>("Product is already exist, please make a new one", HttpStatus.CONFLICT);
         }
         // declare total
-        product.setTotal();
+        Double TotalPrice = product.getPrice()- (product.getPrice() * product.getDisc());
+        product.setTotal(TotalPrice);
         // declare data value
         productRepo.put(product.getId(), product);
         // return method for Success createProduct with message and HttpStatus
@@ -103,7 +106,8 @@ public class ProductServiceController {
         // declare data value
         product.setId(id);
         // declare total
-        product.setTotal();
+        Double TotalPrice = product.getPrice()- (product.getPrice() * product.getDisc());
+        product.setTotal(TotalPrice);
         productRepo.put(id, product);
         // return method for Success updateProduct with message and Status
         return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
