@@ -46,28 +46,44 @@ public class Product {
         this.name = name;
     }
 
+    // declare getPrice method 
     public Double getPrice() {
+        // return for getPrice
         return price;
     }
 
+    // declare setPrice method with price variable
     public void setPrice(Double price) {
+        // declare the price
         this.price = price;
     }
 
+   // declare getDisc method
     public Double getDisc() {
+        // return for getDisc
         return disc;
     }
 
+    // declare setDisc method with disc variable 
     public void setDisc(Double disc) {
+        // declare the disc
         this.disc = disc;
     }
 
+    // declare getTotal method
     public Double getTotal() {
-        return total;
+        // return for getTotal
+        return total ;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
+    // declare setTotal method 
+    public void setTotal() {
+        // declare for total and make the calculation using price and discount
+        this.total = price - (price * disc);
     }
+
+  
+
+
     
 }
