@@ -77,9 +77,9 @@ public class Product {
     }
 
     // declare setTotal method 
-    public void setTotal() {
+    public void setTotal(Double total) {
         // declare for total and make the calculation using price and discount
-        this.total = price - (price * disc);
+        this.total = total;
     }
 
   
