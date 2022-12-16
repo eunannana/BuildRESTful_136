@@ -15,12 +15,12 @@ public class Product {
     private String id;
     // declare varaible "name" with String data type
     private String name;
-    // declare varaible "price" with int data type
-    private int price;
-    // declare varaible "disc" with int data type
-    private int disc;
-    // declare varaible "total" with int data type
-    private int total;
+    // declare varaible "price" with Double data type
+    private Double price;
+    // declare varaible "disc" with Double data type
+    private Double disc;
+    // declare varaible "total" with Double data type
+    private Double total;
 
     // declare getId method
     public String getId() {
@@ -44,6 +44,30 @@ public class Product {
     public void setName(String name) {
         // declare the name
         this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getDisc() {
+        return disc;
+    }
+
+    public void setDisc(Double disc) {
+        this.disc = disc;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
     
 }
