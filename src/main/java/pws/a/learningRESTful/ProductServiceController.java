@@ -29,7 +29,7 @@ public class ProductServiceController {
 
     // declare the static method for the first data
     private static Map<String, Product> productRepo = new HashMap<>();
-
+    
     static {
         // declare data 1
         Product honey = new Product();
@@ -37,6 +37,12 @@ public class ProductServiceController {
         honey.setId("1");
         // set name data 1
         honey.setName("Honey");
+        // set price data 1
+        honey.setPrice(50000.00);
+        // set discount data 1
+        honey.setDisc(0.1);
+        // set total data 1
+        honey.setTotal();
         // declare data value
         productRepo.put(honey.getId(), honey);
 
@@ -46,8 +52,16 @@ public class ProductServiceController {
         almond.setId("2");
         // set name data 2
         almond.setName("Almond");
+        // set price data 2
+        almond.setPrice(70000.00);
+        // set discount data 2
+        almond.setDisc(0.3);
+        // set total data 2
+        almond.setTotal();
         // declare data value 
         productRepo.put(almond.getId(), almond);
+        
+        
     }
 
     // declare RequestMapping for URL
@@ -67,6 +81,8 @@ public class ProductServiceController {
             // return method for createProduct that already exist with message and HttpStatus
             return new ResponseEntity<>("Product is already exist, please make a new one", HttpStatus.CONFLICT);
         }
+        // declare total
+        product.setTotal();
         // declare data value
         productRepo.put(product.getId(), product);
         // return method for Success createProduct with message and HttpStatus
@@ -86,6 +102,8 @@ public class ProductServiceController {
         productRepo.remove(id);
         // declare data value
         product.setId(id);
+        // declare total
+        product.setTotal();
         productRepo.put(id, product);
         // return method for Success updateProduct with message and Status
         return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
