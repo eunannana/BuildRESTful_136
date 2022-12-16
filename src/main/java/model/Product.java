@@ -15,6 +15,12 @@ public class Product {
     private String id;
     // declare varaible "name" with String data type
     private String name;
+    // declare varaible "price" with int data type
+    private int price;
+    // declare varaible "disc" with int data type
+    private int disc;
+    // declare varaible "total" with int data type
+    private int total;
 
     // declare getId method
     public String getId() {
